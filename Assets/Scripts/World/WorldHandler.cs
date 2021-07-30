@@ -3,25 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DebugState{ Fire, Earth, Water, Wind, None };
+public enum DebugState{ Clearing, Burning, Sowing, Watering, Blessing, Complete, None};
 public class WorldHandler : MonoBehaviour
 {
     public DebugState CurrentDebugState;
-    [SerializeField] private WorldObjectState _currentWorldState;
+    [SerializeField] private WorldObjectState _currentWorldState = null;
+    bool isWorldComplete = false;
 
-    public readonly WorldObjectState_Fire FireState = new WorldObjectState_Fire();
-    public readonly WorldObjectState_Earth EarthState = new WorldObjectState_Earth();
-    public readonly WorldObjectState_Water WaterState = new WorldObjectState_Water();
-    public readonly WorldObjectState_Wind WindState = new WorldObjectState_Wind();
-    
+    public readonly WorldObjectState_Blessing WorldBlessing = new WorldObjectState_Blessing();
+    public readonly WorldObjectState_Complete WorldComplete = new WorldObjectState_Complete();
+
+    public GameObject BlessingGO;
+    public GameObject CompleteGO;
+
     [SerializeField] private BoxCollider _worldCollider;
-    public ParticleSystem EarthParticleSystem;
+    public ParticleSystem WorldCompletePS;
     public ParticleSystem FireParticleSystem;
+
+    private void Awake()
+    {
+        BlessingGO.SetActive(false);
+        CompleteGO.SetActive(false);
+    }
 
     void Start()
     {
         SetStartState();
-        Debug.Log($"current world sate is {_currentWorldState}");
     }
     private void SetStartState()
     {
@@ -29,17 +36,8 @@ public class WorldHandler : MonoBehaviour
         {
             case DebugState.None:
                 break;
-            case DebugState.Fire:
-                TransistionToState(FireState);
-                break;
-            case DebugState.Earth:
-                TransistionToState(EarthState);
-                break;
-            case DebugState.Water:
-                TransistionToState(WaterState);
-                break;
-            case DebugState.Wind:
-                TransistionToState(WindState);
+            case DebugState.Blessing:
+                TransistionToState(WorldBlessing);
                 break;
         }
     }
@@ -50,13 +48,15 @@ public class WorldHandler : MonoBehaviour
     }
     public void TransistionToState(WorldObjectState state)
     {
+        if (_currentWorldState != null)
+            _currentWorldState.ExitState(this);
         _currentWorldState = state;
         _currentWorldState.EnterState(this);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"ontriggerEnter was fired and detecting {other.gameObject.name}");
-        _currentWorldState.CheckTrigger(this, other);
+        if(!isWorldComplete)
+            _currentWorldState.CheckTrigger(this, other);
     }
 }
