@@ -8,6 +8,7 @@ TagManager:
   - FireElement
   - WindElement
   - EarthElement
+  - World
   layers:
   - Default
   - TransparentFX

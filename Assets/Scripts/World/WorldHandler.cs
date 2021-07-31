@@ -8,7 +8,8 @@ public class WorldHandler : MonoBehaviour
 {
     public DebugState CurrentDebugState;
     [SerializeField] private WorldObjectState _currentWorldState = null;
-    bool isWorldComplete = false;
+    public bool isWorldComplete = false;
+    public int WorldValue;
 
     public readonly WorldObjectState_Blessing WorldBlessing = new WorldObjectState_Blessing();
     public readonly WorldObjectState_Complete WorldComplete = new WorldObjectState_Complete();
