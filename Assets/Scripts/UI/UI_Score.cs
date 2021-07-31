@@ -19,5 +19,4 @@ public class UI_Score : MonoBehaviour
     {
         _scoreTMP.text = _playerSO.Score.ToString();
     }
-
 }

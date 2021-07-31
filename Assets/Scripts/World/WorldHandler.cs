@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum DebugState{ Clearing, Burning, Sowing, Watering, Blessing, Complete, None};
+[SelectionBase]
 public class WorldHandler : MonoBehaviour
 {
     public DebugState CurrentDebugState;
@@ -21,6 +22,7 @@ public class WorldHandler : MonoBehaviour
     public ParticleSystem WorldCompletePS;
     public ParticleSystem FireParticleSystem;
 
+    public Animator Animator;
     private void Awake()
     {
         BlessingGO.SetActive(false);
@@ -41,7 +43,6 @@ public class WorldHandler : MonoBehaviour
                 break;
         }
     }
-
     void Update()
     {
         _currentWorldState.Update(this);
@@ -53,10 +54,17 @@ public class WorldHandler : MonoBehaviour
         _currentWorldState = state;
         _currentWorldState.EnterState(this);
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if(!isWorldComplete)
             _currentWorldState.CheckTrigger(this, other);
+    }
+    public void DelayedExitAnimation()
+    {
+        Invoke("ExitAnimation", 1f);
+    }
+    private void ExitAnimation()
+    {
+        Animator.SetTrigger("isComplete");
     }
 }

@@ -9,7 +9,7 @@ public class WorldObjectState_Complete : WorldObjectState
         worldHandler.WorldCompletePS.Play();
         worldHandler.CompleteGO.SetActive(true);
         worldHandler.isWorldComplete = true;
-        Debug.Log($"World is complete");
+        worldHandler.DelayedExitAnimation();       
     }
     public override void ExitState(WorldHandler worldHandler)
     {
