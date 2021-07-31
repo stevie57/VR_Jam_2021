@@ -26,7 +26,6 @@ public class WorldHandler : MonoBehaviour
         BlessingGO.SetActive(false);
         CompleteGO.SetActive(false);
     }
-
     void Start()
     {
         SetStartState();

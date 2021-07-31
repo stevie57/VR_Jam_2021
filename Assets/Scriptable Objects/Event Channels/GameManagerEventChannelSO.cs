@@ -15,7 +15,7 @@ public class GameManagerEventChannelSO : ScriptableObject
         }
         else
         {
-            Debug.LogWarning("On Game Manager Start was requested but nobody picked it up");
+            Debug.LogWarning($"{this.name} event was requested but nobody picked it up");
         }
     }
 }
