@@ -22,7 +22,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c6b13fff5f5fc274e8d314c046588c99, type: 3}
   - {fileID: 8300000, guid: 4b53d773e26f8f64892d75a578bbf750, type: 3}
   - {fileID: 8300000, guid: e0181cc2ceba6fd448dd47c958955a47, type: 3}
-  FireClips: []
+  FireClips:
+  - {fileID: 8300000, guid: af7580de2b9a347479fb4afc856dd157, type: 3}
   WorldErrorClips:
   - {fileID: 8300000, guid: 52953f1b2e1fec04190fe6b1ea766cba, type: 3}
   - {fileID: 8300000, guid: d5819dcd50c18584f961a8655ae2a25b, type: 3}
@@ -31,3 +32,4 @@ MonoBehaviour:
   WorldCorrectClips:
   - {fileID: 8300000, guid: 6d56c3279abc4a64c9764544255a1826, type: 3}
   - {fileID: 8300000, guid: c177bdf891ec4f648bf57566165947a1, type: 3}
+  BurningWorld: {fileID: 8300000, guid: 4a88c0602679f3f489f39a727e245d08, type: 3}
