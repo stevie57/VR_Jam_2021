@@ -5,7 +5,7 @@ using UnityEngine;
 public class UI_MainMenu : MonoBehaviour
 {
     public GameManagerEventChannelSO StartButton;
-    public GameManagerEventChannelSO QuitButton;
+    public GameManagerEventChannelSO QuitButton; 
     private Canvas _canvas;
     private  void Awake()
     {

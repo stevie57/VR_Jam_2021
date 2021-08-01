@@ -98,10 +98,21 @@ public class GameManager : MonoBehaviour
         yield return SceneManager.LoadSceneAsync("Level", LoadSceneMode.Additive);
         _currentScene = SceneManager.GetSceneByName("Level");
         SceneManager.SetActiveScene(_currentScene);
-        StartLevelTimer();
-
         yield return screenFade.FadeOut();
     }
+
+    private IEnumerator LevelCoroutine(string level)
+    {
+        yield return screenFade.FadeIn();
+        yield return new WaitForSeconds(1f);
+
+
+        yield return SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
+        _currentScene = SceneManager.GetSceneByName(level);
+        SceneManager.SetActiveScene(_currentScene);
+        yield return screenFade.FadeOut();
+    }
+
     private IEnumerator EndLevelCoroutine()
     {
         yield return screenFade.FadeIn();
@@ -118,6 +129,13 @@ public class GameManager : MonoBehaviour
         UnloadPrevious(_currentScene);
         StartCoroutine(LevelCoroutine());
     }
+
+    private void Start_LoadLevelNumber(string level)
+    {
+        UnloadPrevious(_currentScene);
+        StartCoroutine(LevelCoroutine(level));
+    }
+
     private void StartLevelTimer()
     {
         _timer.StartTimer(_levelDuration);

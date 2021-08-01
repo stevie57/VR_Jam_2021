@@ -58,10 +58,6 @@ public class WorldHandler : MonoBehaviour
         Duration = 10f;
         SetStartState();
     }
-    void Start()
-    {
-        //SetStartState();
-    }
     private void SetStartState()
     {
         if(CurrentDebugState != DebugState.None)
@@ -118,7 +114,6 @@ public class WorldHandler : MonoBehaviour
         else
             IncorrectElement();
     }
-
     private void IncorrectElement()
     {
         if (!_audioSource.isPlaying)
@@ -131,13 +126,11 @@ public class WorldHandler : MonoBehaviour
         _audioSource.Stop();
         _audioSource.PlayOneShot(_audioClipsSO.RandomClip(_audioClipsSO.WorldCorrectClips));
     }
-
     public void PlayBurningSFX()
     {
         _audioSource.clip = _audioClipsSO.BurningWorld;
         _audioSource.Play();
     }
-
     public void StopBurningSFX()
     {
         _audioSource.Stop();

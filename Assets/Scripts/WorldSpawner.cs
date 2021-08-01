@@ -22,6 +22,8 @@ public class WorldSpawner : MonoBehaviour
         {
             GameObject worldGO = Instantiate(_worldPrefab);
             worldGO.SetActive(false);
+            WorldHandler worldHandler = worldGO.GetComponent<WorldHandler>();
+            worldHandler.WorldStateRange = WorldStateRange;
             WorldPool.Enqueue(worldGO);
         }
     }
@@ -38,7 +40,7 @@ public class WorldSpawner : MonoBehaviour
         worldGO.transform.rotation = Quaternion.identity;
         WorldHandler worldHandler = worldGO.GetComponent<WorldHandler>();
         worldHandler.isWorldComplete = false;
-        worldHandler.WorldStateRange = this.WorldStateRange;        
+  
         worldGO.SetActive(true);
     }
 }
