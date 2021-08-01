@@ -27,7 +27,7 @@ public class RobotAnimController : MonoBehaviour
         {
             Vector3 lookAtPos = target.position - transform.position;
             Quaternion newRotation = Quaternion.LookRotation(lookAtPos, transform.up);
-            Quaternion targetRotation = new Quaternion(0, newRotation.y, 0, 0);
+            Quaternion targetRotation = new Quaternion(0, -newRotation.y, 0, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
             yield return null;
         }

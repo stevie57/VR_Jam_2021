@@ -10,6 +10,7 @@ public class WorldSpawner : MonoBehaviour
     public Queue<GameObject> WorldPool = new Queue<GameObject>();
     [SerializeField] private int _amountToPool;
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private int WorldStateRange;
     private void Start()
     {
         CreateWorldPool();
@@ -35,7 +36,9 @@ public class WorldSpawner : MonoBehaviour
         worldRB.angularVelocity = Vector3.zero;
         worldGO.transform.position = _spawnPoint.transform.position;
         worldGO.transform.rotation = Quaternion.identity;
-        worldGO.GetComponent<WorldHandler>().isWorldComplete = false;
+        WorldHandler worldHandler = worldGO.GetComponent<WorldHandler>();
+        worldHandler.isWorldComplete = false;
+        worldHandler.WorldStateRange = this.WorldStateRange;        
         worldGO.SetActive(true);
     }
 }

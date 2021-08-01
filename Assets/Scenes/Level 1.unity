@@ -956,6 +956,7 @@ MonoBehaviour:
   _worldPrefab: {fileID: 157035698262865379, guid: 45f972f322ecfc44bad1cd01efa821b7, type: 3}
   _amountToPool: 5
   _spawnPoint: {fileID: 274991813}
+  WorldStateRange: 1
 --- !u!4 &844262096
 Transform:
   m_ObjectHideFlags: 0

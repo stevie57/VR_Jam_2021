@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredElement: 0
-  CurrentDebugState: 4
+  CurrentDebugState: 6
   isWorldComplete: 0
   WorldValue: 1
   Duration: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
   SowingGO: {fileID: 7892692006283425042}
   BurningGO: {fileID: 7232344880846441014}
   ClearingGO: {fileID: 8562005865403984798}
+  WorldStateRange: 0
   _worldCollider: {fileID: 157035698262865377}
   WorldCompletePS: {fileID: 1315375444719082598}
   FireParticleSystem: {fileID: 157035698914914441}

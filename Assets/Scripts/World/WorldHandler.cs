@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ElementTypes { Fire, Earth, Water, Wind };
-public enum DebugState { Watering, Blessing, Sowing, Burning, Clearing, Complete, None};
+public enum DebugState { Blessing, Watering, Sowing, Burning, Clearing, Complete, None};
 [SelectionBase]
 public class WorldHandler : MonoBehaviour
 {
@@ -29,6 +29,8 @@ public class WorldHandler : MonoBehaviour
     public GameObject BurningGO;
     public GameObject ClearingGO;
 
+    public int WorldStateRange;
+
     [SerializeField] private BoxCollider _worldCollider;
     public ParticleSystem WorldCompletePS;
     public ParticleSystem FireParticleSystem;
@@ -42,16 +44,23 @@ public class WorldHandler : MonoBehaviour
     public Animator Animator;
     private void Awake()
     {
+
+    }
+
+    private void OnEnable()
+    {
         WateringGO.SetActive(false);
         BlessingGO.SetActive(false);
         CompleteGO.SetActive(false);
         SowingGO.SetActive(false);
         BurningGO.SetActive(false);
         ClearingGO.SetActive(false);
+        Duration = 10f;
+        SetStartState();
     }
     void Start()
     {
-        SetStartState();
+        //SetStartState();
     }
     private void SetStartState()
     {
@@ -78,7 +87,7 @@ public class WorldHandler : MonoBehaviour
             return;
         }
         UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
-        int randomNumber = UnityEngine.Random.Range(0, 4);
+        int randomNumber = UnityEngine.Random.Range(0, WorldStateRange);
         Debug.Log($"random number is {randomNumber}");        
         CurrentDebugState = (DebugState)randomNumber;
         SetStartState();
