@@ -59,7 +59,6 @@ public class WindElementHandler : ElementHandler
         else
         {
             Debug.DrawRay(_rayStart.transform.position, _rayStart.transform.forward * 1000, Color.white);
-            Debug.Log("Did not Hit");
         }
     }
 

@@ -10,13 +10,12 @@ public class PlayerSO : ScriptableObject
     public UI_Score ScoreUI;
     private void OnEnable()
     {
-        //ResetScore();
+        ResetScore();
     }
     public void IncreaseScore(int value)
     {
         Score += value;
         ScoreUI.DisplayScore();
-        Debug.Log($"score ui should be updating");
     }
     public void ResetScore()
     {

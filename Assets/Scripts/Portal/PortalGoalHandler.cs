@@ -14,11 +14,8 @@ public class PortalGoalHandler : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log($"Object at portal end detected and it is {other.gameObject.name}");
-        
+    {      
         WorldHandler worldHandler = other.GetComponent<WorldHandler>();
-        Debug.Log($"worldhandler is currently {worldHandler}");
         if (worldHandler == null)
             return;
 

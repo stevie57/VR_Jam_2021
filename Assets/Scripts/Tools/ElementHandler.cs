@@ -26,9 +26,15 @@ public class ElementHandler : XRGrabInteractable
     }
     void ResetPosition()
     {
-        _rigidBody.velocity = Vector3.zero;
-        _rigidBody.angularVelocity = Vector3.zero;
+        this.gameObject.SetActive(false);
+        _rigidBody.isKinematic = true;
         transform.position = startPos;
         transform.rotation = Quaternion.identity;
+        _rigidBody.velocity = new Vector3(0, 0, 0);
+        _rigidBody.angularVelocity = new Vector3(0, 0, 0);
+        _rigidBody.isKinematic = false;
+        this.gameObject.SetActive(true);
+        Debug.Log($"velocity is {_rigidBody.velocity}");
+        Debug.Log($"angle velocity is {_rigidBody.angularVelocity}");
     }
 }

@@ -19,3 +19,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 271c979128fae0141a6ee15f5b4fd6bb, type: 3}
   EarthClips: []
   FireClips: []
+  WorldErrorClips:
+  - {fileID: 8300000, guid: 52953f1b2e1fec04190fe6b1ea766cba, type: 3}
+  - {fileID: 8300000, guid: d5819dcd50c18584f961a8655ae2a25b, type: 3}
+  - {fileID: 8300000, guid: 42e5374412b6ded46bf30feb0e1ba7c4, type: 3}
+  - {fileID: 8300000, guid: 844823044800b4748a81f5117d4ebe7e, type: 3}
+  WorldCorrectClips:
+  - {fileID: 8300000, guid: 6d56c3279abc4a64c9764544255a1826, type: 3}
+  - {fileID: 8300000, guid: c177bdf891ec4f648bf57566165947a1, type: 3}

@@ -35,6 +35,7 @@ public class WorldSpawner : MonoBehaviour
         worldRB.angularVelocity = Vector3.zero;
         worldGO.transform.position = _spawnPoint.transform.position;
         worldGO.transform.rotation = Quaternion.identity;
+        worldGO.GetComponent<WorldHandler>().isWorldComplete = false;
         worldGO.SetActive(true);
     }
 }

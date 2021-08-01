@@ -9,8 +9,8 @@ public class AudioHandlerWorld_SFX : ScriptableObject
     public List<AudioClip> WaterClips = new List<AudioClip>();
     public List<AudioClip> EarthClips = new List<AudioClip>();
     public List<AudioClip> FireClips = new List<AudioClip>();
-    public List<AudioClip> WorldErrorCLips = new List<AudioClip>();
-    public List<AudioClip> WorldCorrectCLips = new List<AudioClip>();
+    public List<AudioClip> WorldErrorClips = new List<AudioClip>();
+    public List<AudioClip> WorldCorrectClips = new List<AudioClip>();
 
     public AudioClip RandomClip(List<AudioClip> soundList)
     {

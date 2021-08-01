@@ -34,6 +34,7 @@ public class WorldHandler : MonoBehaviour
     public Animator Animator;
     private void Awake()
     {
+        WateringGO.SetActive(false);
         BlessingGO.SetActive(false);
         CompleteGO.SetActive(false);
     }
@@ -43,7 +44,6 @@ public class WorldHandler : MonoBehaviour
     }
     private void SetStartState()
     {
-        CurrentDebugState = (DebugState)1;
         if(CurrentDebugState != DebugState.None)
         {
             switch (CurrentDebugState)
@@ -58,7 +58,7 @@ public class WorldHandler : MonoBehaviour
             return;
         }
         UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
-        int randomNumber = UnityEngine.Random.Range(0, 2);
+        int randomNumber = UnityEngine.Random.Range(0, 1);
         Debug.Log($"random number is {randomNumber}");        
         CurrentDebugState = (DebugState)randomNumber;
         SetStartState();
@@ -92,12 +92,12 @@ public class WorldHandler : MonoBehaviour
 
     private void IncorrectElement()
     {
-        _audioSource.clip = _audioClipsSO.RandomClip(_audioClipsSO.WorldErrorCLips);
+        _audioSource.clip = _audioClipsSO.RandomClip(_audioClipsSO.WorldErrorClips);
         _audioSource.Play();
+        _errorCount++;
     }
-
     public void CorrectElementSound()
     {
-        _audioSource.PlayOneShot(_audioClipsSO.RandomClip(_audioClipsSO.WorldCorrectCLips));
+        _audioSource.PlayOneShot(_audioClipsSO.RandomClip(_audioClipsSO.WorldCorrectClips));
     }
 }
