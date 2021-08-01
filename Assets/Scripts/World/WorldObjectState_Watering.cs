@@ -17,6 +17,9 @@ public class WorldObjectState_Watering : WorldObjectState
     public override void Update(WorldHandler worldHandler)
     {
         if(worldHandler.Duration <= 0)
+        {
+            worldHandler.CorrectElementSound();
             worldHandler.TransistionToState(worldHandler.WorldBlessing);
+        }
     }
 }

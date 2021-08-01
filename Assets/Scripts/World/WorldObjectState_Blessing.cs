@@ -20,6 +20,10 @@ public class WorldObjectState_Blessing : WorldObjectState
     private void CheckDuration(WorldHandler worldHandler)
     {
         if (worldHandler.Duration <= 0)
+        {
+            worldHandler.CorrectElementSound();
             worldHandler.TransistionToState(worldHandler.WorldComplete);
+        }
+            
     }
 }

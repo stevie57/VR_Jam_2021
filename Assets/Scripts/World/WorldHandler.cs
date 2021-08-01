@@ -27,6 +27,10 @@ public class WorldHandler : MonoBehaviour
     public ParticleSystem WorldCompletePS;
     public ParticleSystem FireParticleSystem;
 
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private int _errorCount = 0;
+    [SerializeField] private AudioHandlerWorld_SFX _audioClipsSO;
+
     public Animator Animator;
     private void Awake()
     {
@@ -82,5 +86,18 @@ public class WorldHandler : MonoBehaviour
     {
         if (elemenetHandler.ElementType == RequiredElement)
             Duration -= Time.deltaTime;
+        else
+            IncorrectElement();
+    }
+
+    private void IncorrectElement()
+    {
+        _audioSource.clip = _audioClipsSO.RandomClip(_audioClipsSO.WorldErrorCLips);
+        _audioSource.Play();
+    }
+
+    public void CorrectElementSound()
+    {
+        _audioSource.PlayOneShot(_audioClipsSO.RandomClip(_audioClipsSO.WorldCorrectCLips));
     }
 }
