@@ -24,9 +24,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool isDebug;
     [SerializeField] DebugLevel _debugLevel;
 
+    [Header("Screen Fader")]
+    public ScreenFade screenFade = null;
     private void Awake()
     {
         _currentScene = SceneManager.GetActiveScene();
+    }
+    private void OnValidate()
+    {
+        if (!screenFade)
+            screenFade = FindObjectOfType<ScreenFade>();
     }
     private void OnEnable()
     {
@@ -48,6 +55,8 @@ public class GameManager : MonoBehaviour
             LoadSceneDebug();
         else
             LoadLevel(MainMenuCoroutine());
+
+        Invoke("Start_LoadLevel", 15f);
     }
     public void TimedOut()
     {
@@ -84,17 +93,27 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator LevelCoroutine()
     {
+        yield return screenFade.FadeIn();
+        yield return new WaitForSeconds(1f);
+
+
         yield return SceneManager.LoadSceneAsync("Level", LoadSceneMode.Additive);
         _currentScene = SceneManager.GetSceneByName("Level");
         SceneManager.SetActiveScene(_currentScene);
         StartLevelTimer();
-       
+
+        yield return screenFade.FadeOut();
     }
     private IEnumerator EndLevelCoroutine()
     {
+        yield return screenFade.FadeIn();
+        yield return new WaitForSeconds(1f);
+
         yield return SceneManager.LoadSceneAsync("EndLevel", LoadSceneMode.Additive);
         _currentScene = SceneManager.GetSceneByName("EndLevel");
         SceneManager.SetActiveScene(_currentScene);
+
+        yield return screenFade.FadeOut();
     }
     private void Start_LoadLevel()
     {

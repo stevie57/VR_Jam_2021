@@ -18,10 +18,12 @@ public class WorldHandler : MonoBehaviour
     public readonly WorldObjectState_Blessing WorldBlessing = new WorldObjectState_Blessing();
     public readonly WorldObjectState_Complete WorldComplete = new WorldObjectState_Complete();
     public readonly WorldObjectState_Watering WorldWatering = new WorldObjectState_Watering();
+    public readonly WorldObjectState_Sowing WorldSowing = new WorldObjectState_Sowing();
 
     public GameObject BlessingGO;
     public GameObject CompleteGO;
     public GameObject WateringGO;
+    public GameObject SowingGO;
 
     [SerializeField] private BoxCollider _worldCollider;
     public ParticleSystem WorldCompletePS;
@@ -56,11 +58,14 @@ public class WorldHandler : MonoBehaviour
                 case DebugState.Watering:
                     TransistionToState(WorldWatering);
                     break;
+                case DebugState.Sowing:
+                    TransistionToState(WorldSowing);
+                    break;
             }
             return;
         }
         UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
-        int randomNumber = UnityEngine.Random.Range(0, 1);
+        int randomNumber = UnityEngine.Random.Range(0, 2);
         Debug.Log($"random number is {randomNumber}");        
         CurrentDebugState = (DebugState)randomNumber;
         SetStartState();

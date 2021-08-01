@@ -8,6 +8,7 @@ public class WorldObjectState_Blessing : WorldObjectState
         worldHandler.BlessingGO.SetActive(true);
         worldHandler.Duration = 2f;
         worldHandler.RequiredElement = ElementTypes.Wind;
+        worldHandler.WorldValue++;
     }
     public override void ExitState(WorldHandler worldHandler)
     {

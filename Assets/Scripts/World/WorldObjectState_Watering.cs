@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class WorldObjectState_Watering : WorldObjectState
 {
     public override void EnterState(WorldHandler worldHandler)
@@ -9,6 +8,7 @@ public class WorldObjectState_Watering : WorldObjectState
         worldHandler.WateringGO.SetActive(true);
         worldHandler.Duration = 2f;
         worldHandler.RequiredElement = ElementTypes.Water;
+        worldHandler.WorldValue++;
     }
     public override void ExitState(WorldHandler worldHandler)
     {
