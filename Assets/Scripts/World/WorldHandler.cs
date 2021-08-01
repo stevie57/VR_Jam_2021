@@ -122,4 +122,15 @@ public class WorldHandler : MonoBehaviour
         _audioSource.Stop();
         _audioSource.PlayOneShot(_audioClipsSO.RandomClip(_audioClipsSO.WorldCorrectClips));
     }
+
+    public void PlayBurningSFX()
+    {
+        _audioSource.clip = _audioClipsSO.BurningWorld;
+        _audioSource.Play();
+    }
+
+    public void StopBurningSFX()
+    {
+        _audioSource.Stop();
+    }
 }

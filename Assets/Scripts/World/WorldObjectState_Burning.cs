@@ -9,12 +9,14 @@ public class WorldObjectState_Burning : WorldObjectState
         worldHandler.BurningGO.SetActive(true);
         worldHandler.Duration = 2f;
         worldHandler.RequiredElement = ElementTypes.Water;
+        worldHandler.PlayBurningSFX();
         worldHandler.WorldValue++;
     }
 
     public override void ExitState(WorldHandler worldHandler)
     {
         worldHandler.BurningGO.SetActive(false);
+        worldHandler.StopBurningSFX();
     }
 
     public override void Update(WorldHandler worldHandler)
