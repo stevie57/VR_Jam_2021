@@ -9,17 +9,9 @@ public class WorldObjectState_Complete : WorldObjectState
         worldHandler.WorldCompletePS.Play();
         worldHandler.CompleteGO.SetActive(true);
         worldHandler.isWorldComplete = true;
-        worldHandler.DelayedExitAnimation();       
+        worldHandler.DelayedExitAnimation();
     }
     public override void ExitState(WorldHandler worldHandler)
-    {
-
-    }
-    public override void CheckTrigger(WorldHandler worldHandler, Collider other)
-    {
-
-    }
-    public override void Start(WorldHandler worldHandler)
     {
 
     }

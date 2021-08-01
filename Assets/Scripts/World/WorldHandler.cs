@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DebugState{ Clearing, Burning, Sowing, Watering, Blessing, Complete, None};
+public enum ElementTypes { Fire, Earth, Water, Wind };
+public enum DebugState { Watering, Blessing, Sowing, Burning, Clearing, Complete, None};
 [SelectionBase]
 public class WorldHandler : MonoBehaviour
 {
+    public ElementTypes RequiredElement;
     public DebugState CurrentDebugState;
     [SerializeField] private WorldObjectState _currentWorldState = null;
     public bool isWorldComplete = false;
@@ -15,9 +17,11 @@ public class WorldHandler : MonoBehaviour
 
     public readonly WorldObjectState_Blessing WorldBlessing = new WorldObjectState_Blessing();
     public readonly WorldObjectState_Complete WorldComplete = new WorldObjectState_Complete();
+    public readonly WorldObjectState_Watering WorldWatering = new WorldObjectState_Watering();
 
     public GameObject BlessingGO;
     public GameObject CompleteGO;
+    public GameObject WateringGO;
 
     [SerializeField] private BoxCollider _worldCollider;
     public ParticleSystem WorldCompletePS;
@@ -35,14 +39,20 @@ public class WorldHandler : MonoBehaviour
     }
     private void SetStartState()
     {
-        switch (CurrentDebugState)
+        if(CurrentDebugState != DebugState.None)
         {
-            case DebugState.None:
-                break;
-            case DebugState.Blessing:
-                TransistionToState(WorldBlessing);
-                break;
+            switch (CurrentDebugState)
+            {
+                case DebugState.Blessing:
+                    TransistionToState(WorldBlessing);
+                    break;
+                case DebugState.Watering:
+                    TransistionToState(WorldWatering);
+                    break;
+            }
+            return;
         }
+        
     }
     void Update()
     {
@@ -55,11 +65,6 @@ public class WorldHandler : MonoBehaviour
         _currentWorldState = state;
         _currentWorldState.EnterState(this);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(!isWorldComplete)
-            _currentWorldState.CheckTrigger(this, other);
-    }
     public void DelayedExitAnimation()
     {
         Invoke("ExitAnimation", 1f);
@@ -69,8 +74,9 @@ public class WorldHandler : MonoBehaviour
         Animator.SetTrigger("isComplete");
     }
 
-    public void DecreaseDuration()
+    public void DecreaseDuration(ElementHandler elemenetHandler)
     {
-        Duration -= Time.deltaTime;
+        if (elemenetHandler.ElementType == RequiredElement)
+            Duration -= Time.deltaTime;
     }
 }

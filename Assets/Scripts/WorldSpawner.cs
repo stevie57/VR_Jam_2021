@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[SelectionBase]
 public class WorldSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject _worldPrefab;
@@ -29,7 +30,11 @@ public class WorldSpawner : MonoBehaviour
         if (worldGO == null)
             return;
 
+        Rigidbody worldRB = worldGO.GetComponent<Rigidbody>();
+        worldRB.velocity = Vector3.zero;
+        worldRB.angularVelocity = Vector3.zero;
         worldGO.transform.position = _spawnPoint.transform.position;
+        worldGO.transform.rotation = Quaternion.identity;
         worldGO.SetActive(true);
     }
 }
