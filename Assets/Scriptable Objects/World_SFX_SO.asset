@@ -17,7 +17,11 @@ MonoBehaviour:
   WaterClips:
   - {fileID: 8300000, guid: eb3cf351dab8bb34985ff0bf11e52c44, type: 3}
   - {fileID: 8300000, guid: 271c979128fae0141a6ee15f5b4fd6bb, type: 3}
-  EarthClips: []
+  EarthClips:
+  - {fileID: 8300000, guid: 528cb604b6bc68e46ba68fd72df90f16, type: 3}
+  - {fileID: 8300000, guid: c6b13fff5f5fc274e8d314c046588c99, type: 3}
+  - {fileID: 8300000, guid: 4b53d773e26f8f64892d75a578bbf750, type: 3}
+  - {fileID: 8300000, guid: e0181cc2ceba6fd448dd47c958955a47, type: 3}
   FireClips: []
   WorldErrorClips:
   - {fileID: 8300000, guid: 52953f1b2e1fec04190fe6b1ea766cba, type: 3}
