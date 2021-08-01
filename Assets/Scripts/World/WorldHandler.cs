@@ -39,6 +39,7 @@ public class WorldHandler : MonoBehaviour
     }
     private void SetStartState()
     {
+        CurrentDebugState = (DebugState)1;
         if(CurrentDebugState != DebugState.None)
         {
             switch (CurrentDebugState)
@@ -52,7 +53,11 @@ public class WorldHandler : MonoBehaviour
             }
             return;
         }
-        
+        UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
+        int randomNumber = UnityEngine.Random.Range(0, 2);
+        Debug.Log($"random number is {randomNumber}");        
+        CurrentDebugState = (DebugState)randomNumber;
+        SetStartState();
     }
     void Update()
     {
@@ -73,7 +78,6 @@ public class WorldHandler : MonoBehaviour
     {
         Animator.SetTrigger("isComplete");
     }
-
     public void DecreaseDuration(ElementHandler elemenetHandler)
     {
         if (elemenetHandler.ElementType == RequiredElement)
