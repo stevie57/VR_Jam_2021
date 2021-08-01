@@ -12,11 +12,12 @@ public class UI_Score : MonoBehaviour
         _playerSO.ScoreUI = this;
     }
     void Start()
-    {
+    {       
         DisplayScore();
     }
     public void DisplayScore()
     {
-        _scoreTMP.text = _playerSO.Score.ToString();
+        if (_scoreTMP != null)
+            _scoreTMP.text = _playerSO.Score.ToString();
     }
 }

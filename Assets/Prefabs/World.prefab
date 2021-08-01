@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredElement: 0
-  CurrentDebugState: 0
+  CurrentDebugState: 6
   isWorldComplete: 0
   WorldValue: 1
   Duration: 0
