@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6436453781919643178}
   - component: {fileID: 6436453781919643177}
   - component: {fileID: 6436453781919643176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wind Element
   m_TagString: WindElement
   m_Icon: {fileID: 0}

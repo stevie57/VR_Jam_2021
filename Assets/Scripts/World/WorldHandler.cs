@@ -19,11 +19,15 @@ public class WorldHandler : MonoBehaviour
     public readonly WorldObjectState_Complete WorldComplete = new WorldObjectState_Complete();
     public readonly WorldObjectState_Watering WorldWatering = new WorldObjectState_Watering();
     public readonly WorldObjectState_Sowing WorldSowing = new WorldObjectState_Sowing();
+    public readonly WorldObjectState_Burning WorldBurning = new WorldObjectState_Burning();
+    public readonly WorldObjectState_Clearing WorldClearing = new WorldObjectState_Clearing();
 
     public GameObject BlessingGO;
     public GameObject CompleteGO;
     public GameObject WateringGO;
     public GameObject SowingGO;
+    public GameObject BurningGO;
+    public GameObject ClearingGO;
 
     [SerializeField] private BoxCollider _worldCollider;
     public ParticleSystem WorldCompletePS;
@@ -41,6 +45,9 @@ public class WorldHandler : MonoBehaviour
         WateringGO.SetActive(false);
         BlessingGO.SetActive(false);
         CompleteGO.SetActive(false);
+        SowingGO.SetActive(false);
+        BurningGO.SetActive(false);
+        ClearingGO.SetActive(false);
     }
     void Start()
     {
@@ -61,11 +68,17 @@ public class WorldHandler : MonoBehaviour
                 case DebugState.Sowing:
                     TransistionToState(WorldSowing);
                     break;
+                case DebugState.Burning:
+                    TransistionToState(WorldBurning);
+                    break;
+                case DebugState.Clearing:
+                    TransistionToState(WorldClearing);
+                    break;
             }
             return;
         }
         UnityEngine.Random.InitState((int)System.DateTime.Now.Ticks);
-        int randomNumber = UnityEngine.Random.Range(0, 2);
+        int randomNumber = UnityEngine.Random.Range(0, 4);
         Debug.Log($"random number is {randomNumber}");        
         CurrentDebugState = (DebugState)randomNumber;
         SetStartState();

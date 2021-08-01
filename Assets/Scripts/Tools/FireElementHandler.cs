@@ -1,9 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-public class WaterElementHandler : ElementHandler
+
+public class FireElementHandler : ElementHandler
 {
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private float _rayLength;
@@ -13,13 +13,12 @@ public class WaterElementHandler : ElementHandler
     {
         base.OnActivated(args);
         _particleSystem.Play();
-        PlayWaterSFX();
+        PlaySFX();
         isActivated = true;
     }
-
-    private void PlayWaterSFX()
+    private void PlaySFX()
     {
-        AudioClip clip = _clipsSFXSO.RandomClip(_clipsSFXSO.WaterClips);
+        AudioClip clip = _clipsSFXSO.RandomClip(_clipsSFXSO.FireClips);
         _audioSource.clip = clip;
         _audioSource.Play();
     }

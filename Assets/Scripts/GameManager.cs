@@ -55,8 +55,6 @@ public class GameManager : MonoBehaviour
             LoadSceneDebug();
         else
             LoadLevel(MainMenuCoroutine());
-
-        Invoke("Start_LoadLevel", 15f);
     }
     public void TimedOut()
     {
