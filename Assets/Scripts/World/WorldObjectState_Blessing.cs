@@ -23,7 +23,6 @@ public class WorldObjectState_Blessing : WorldObjectState
         {
             worldHandler.CorrectElementSound();
             worldHandler.TransistionToState(worldHandler.WorldComplete);
-        }
-            
+        }            
     }
 }

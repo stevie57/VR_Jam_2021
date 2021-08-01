@@ -31,6 +31,8 @@ public class WorldHandler : MonoBehaviour
     [SerializeField] private int _errorCount = 0;
     [SerializeField] private AudioHandlerWorld_SFX _audioClipsSO;
 
+    public GameManagerEventChannelSO GrowthEvent;
+
     public Animator Animator;
     private void Awake()
     {
@@ -76,7 +78,7 @@ public class WorldHandler : MonoBehaviour
     }
     public void DelayedExitAnimation()
     {
-        Invoke("ExitAnimation", 1f);
+        Invoke("ExitAnimation", 2f);
     }
     private void ExitAnimation()
     {

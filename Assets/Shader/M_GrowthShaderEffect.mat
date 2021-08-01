@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_GrowthShaderEffect
+  m_Shader: {fileID: -6465566751694194690, guid: b58ff67d8a8231349ac74c305ab582a3, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Grow_: 0
+    - Vector1_1ba5d3154fd44644bd77e9e9eecd5740: 0.04
+    - Vector1_2718e3badd9d4869abb0ebbef7547a72: 0.5
+    - Vector1_5744ef9687674e1ab17dc305f1c49b3d: 1
+    - Vector1_baa7a8fd9e594502b30c240c58061ed1: 0
+    - Vector1_caaa4b247a8648b29d954aa90846f82a: 0
+    - Vector1_e9d2d455b2df4aaea8248afb07bfed69: 0.955
+    m_Colors:
+    - Color_20646dc2fa3847c5af544ec204c64519: {r: 0.2615551, g: 0.9339623, b: 0.20705767, a: 0.3921569}
+    - Vector3_4af9f353db3f4e20b0e79483f88175c0: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
