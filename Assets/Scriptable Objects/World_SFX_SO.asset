@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669eff724f4483c4fbeb7fac166a2e88, type: 3}
+  m_Name: World_SFX_SO
+  m_EditorClassIdentifier: 
+  WindClips:
+  - {fileID: 8300000, guid: 18bc1f3567a162e489cdd0758fd7f167, type: 3}
+  WaterClips:
+  - {fileID: 8300000, guid: eb3cf351dab8bb34985ff0bf11e52c44, type: 3}
+  - {fileID: 8300000, guid: 271c979128fae0141a6ee15f5b4fd6bb, type: 3}
+  EarthClips: []
+  FireClips: []

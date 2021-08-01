@@ -11,6 +11,7 @@ public class WorldHandler : MonoBehaviour
     [SerializeField] private WorldObjectState _currentWorldState = null;
     public bool isWorldComplete = false;
     public int WorldValue;
+    public float Duration;
 
     public readonly WorldObjectState_Blessing WorldBlessing = new WorldObjectState_Blessing();
     public readonly WorldObjectState_Complete WorldComplete = new WorldObjectState_Complete();
@@ -66,5 +67,10 @@ public class WorldHandler : MonoBehaviour
     private void ExitAnimation()
     {
         Animator.SetTrigger("isComplete");
+    }
+
+    public void DecreaseDuration()
+    {
+        Duration -= Time.deltaTime;
     }
 }

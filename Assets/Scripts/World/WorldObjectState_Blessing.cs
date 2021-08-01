@@ -8,6 +8,7 @@ public class WorldObjectState_Blessing : WorldObjectState
     public override void EnterState(WorldHandler worldHandler)
     {
         worldHandler.BlessingGO.SetActive(true);
+        worldHandler.Duration = 3f;
     }
     public override void ExitState(WorldHandler worldHandler)
     {
@@ -24,6 +25,12 @@ public class WorldObjectState_Blessing : WorldObjectState
     }
     public override void Update(WorldHandler worldHandler)
     {
+        CheckDuration(worldHandler);
+    }
 
+    private void CheckDuration(WorldHandler worldHandler)
+    {
+        if(worldHandler.Duration <= 0)
+            worldHandler.TransistionToState(worldHandler.WorldComplete);
     }
 }

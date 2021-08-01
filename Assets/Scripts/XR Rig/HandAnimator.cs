@@ -50,9 +50,9 @@ public class HandAnimator : MonoBehaviour
     }
     private void CheckGrip(InputAction.CallbackContext context)
     {
-        Debug.Log("checkgrip has beenn called");
+        //Debug.Log("checkgrip has beenn called");
         gripValue = context.ReadValue<float>();
-        DisplayValue(gripValue);
+        //DisplayValue(gripValue);
         SetFingerTargets(gripFingers, gripValue);
         SmoothFinger(gripFingers);
         AnimateFinger(gripFingers);
@@ -60,7 +60,7 @@ public class HandAnimator : MonoBehaviour
     private void DisplayValue(float value) { if (value > 0.01) Debug.Log($"value is {value}"); }
     private void CheckPointer(InputAction.CallbackContext context)
     {
-        Debug.Log("CheckPointer has beenn called");
+        //Debug.Log("CheckPointer has beenn called");
         pointerValue = context.ReadValue<float>();
         SetFingerTargets(pointFingers, pointerValue);
         SmoothFinger(pointFingers);

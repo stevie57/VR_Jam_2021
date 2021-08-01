@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Misc/AudioListSO")]
+[CreateAssetMenu(menuName = "Misc/WorldSFXListSO")]
 public class AudioHandlerWorld_SFX : ScriptableObject
 {
     public List<AudioClip> WindClips = new List<AudioClip>();
