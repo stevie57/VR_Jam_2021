@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859cc108e7899d847aa195ba50e96921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelDuration: 200
+  _levelDuration: 30
   _timer: {fileID: 1501152627}
   _currentScene:
     m_Handle: 0

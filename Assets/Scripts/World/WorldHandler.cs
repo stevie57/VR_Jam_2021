@@ -92,12 +92,14 @@ public class WorldHandler : MonoBehaviour
 
     private void IncorrectElement()
     {
-        _audioSource.clip = _audioClipsSO.RandomClip(_audioClipsSO.WorldErrorClips);
+        if (!_audioSource.isPlaying)
+            _audioSource.clip = _audioClipsSO.RandomClip(_audioClipsSO.WorldErrorClips);
         _audioSource.Play();
         _errorCount++;
     }
     public void CorrectElementSound()
     {
+        _audioSource.Stop();
         _audioSource.PlayOneShot(_audioClipsSO.RandomClip(_audioClipsSO.WorldCorrectClips));
     }
 }
