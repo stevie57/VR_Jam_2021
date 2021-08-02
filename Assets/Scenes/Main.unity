@@ -1119,7 +1119,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2377,6 +2377,8 @@ MonoBehaviour:
   _LoadLevel1: {fileID: 11400000, guid: 5706d0faa6faab44881553eefa55aaa9, type: 2}
   _LoadLevel2: {fileID: 11400000, guid: 584187dc4ba91b540b1f7be2e1bfe32c, type: 2}
   _LoadLevel3: {fileID: 11400000, guid: 7eb1e32cd8eb5df4c97c62bbeafcf88b, type: 2}
+  _LoadLevel4: {fileID: 11400000, guid: 9340078eb12997348b4e83448a267dfd, type: 2}
+  _EndlessLevel: {fileID: 11400000, guid: d4a9b4bf8cb376141892b0eb4721313b, type: 2}
   isDebug: 1
   _debugLevel: 0
   screenFade: {fileID: 1539341084}

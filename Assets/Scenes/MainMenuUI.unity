@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 32015195}
   - component: {fileID: 32015194}
   m_Layer: 5
-  m_Name: Button - Endless
+  m_Name: Button - Level 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 376409259165955692}
         m_TargetAssemblyTypeName: UI_MainMenuV2, Assembly-CSharp
-        m_MethodName: OnEndlessButton
+        m_MethodName: OnLevel4Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -601,12 +601,12 @@ GameObject:
   - component: {fileID: 412634186}
   - component: {fileID: 412634185}
   m_Layer: 5
-  m_Name: Button - Main Menu (1)
+  m_Name: Button - Endless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &412634184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -671,9 +671,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI_MainMenu, Assembly-CSharp
-        m_MethodName: OnQuitButton
+      - m_Target: {fileID: 376409259165955692}
+        m_TargetAssemblyTypeName: UI_MainMenuV2, Assembly-CSharp
+        m_MethodName: OnEndlessButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Final
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.25
+  m_fontSize: 0.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Endless
+  m_text: Level 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2036,7 +2036,8 @@ MonoBehaviour:
   _level1Button: {fileID: 11400000, guid: 5706d0faa6faab44881553eefa55aaa9, type: 2}
   _level2Button: {fileID: 11400000, guid: 584187dc4ba91b540b1f7be2e1bfe32c, type: 2}
   _level3Button: {fileID: 11400000, guid: 7eb1e32cd8eb5df4c97c62bbeafcf88b, type: 2}
-  _endlessButton: {fileID: 11400000, guid: 9340078eb12997348b4e83448a267dfd, type: 2}
+  _level4Button: {fileID: 11400000, guid: 9340078eb12997348b4e83448a267dfd, type: 2}
+  _endlessButton: {fileID: 11400000, guid: d4a9b4bf8cb376141892b0eb4721313b, type: 2}
   QuitButton: {fileID: 11400000, guid: aed0ef6ed59536843ba7fdfe3f53fe54, type: 2}
 --- !u!224 &376409259165955693
 RectTransform:

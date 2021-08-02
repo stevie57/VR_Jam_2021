@@ -7,6 +7,7 @@ public class UI_MainMenuV2 : MonoBehaviour
     public GameManagerEventChannelSO _level1Button;
     public GameManagerEventChannelSO _level2Button;
     public GameManagerEventChannelSO _level3Button;
+    public GameManagerEventChannelSO _level4Button;
     public GameManagerEventChannelSO _endlessButton;
     public GameManagerEventChannelSO QuitButton;
 
@@ -21,11 +22,6 @@ public class UI_MainMenuV2 : MonoBehaviour
     {
         _level1Button.RaiseEvent();
     } 
-    public void OnQuitButton()
-    {
-        QuitButton.RaiseEvent();
-    }
-
     public void OnLevel2Button()
     {
         _level2Button.RaiseEvent();
@@ -35,8 +31,16 @@ public class UI_MainMenuV2 : MonoBehaviour
     {
         _level3Button.RaiseEvent();
     }
+    public void OnLevel4Button()
+    {
+        _level4Button.RaiseEvent();
+    }
     public void OnEndlessButton()
     {
-        _endlessButton  .RaiseEvent();
+        _endlessButton.RaiseEvent();
+    }
+    public void OnQuitButton()
+    {
+        QuitButton.RaiseEvent();
     }
 }

@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameManagerEventChannelSO _LoadLevel1;
     [SerializeField] private GameManagerEventChannelSO _LoadLevel2;
     [SerializeField] private GameManagerEventChannelSO _LoadLevel3;
+    [SerializeField] private GameManagerEventChannelSO _LoadLevel4;
+    [SerializeField] private GameManagerEventChannelSO _EndlessLevel;
 
     [Header("Debug Settings")]
     [SerializeField] private bool isDebug;
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
         _LoadLevel1.GameManagerEvent += Start_Level1;
         _LoadLevel2.GameManagerEvent += Start_Level2;
         _LoadLevel3.GameManagerEvent += Start_Level3;
+        _LoadLevel4.GameManagerEvent += Start_Level4;
+        _EndlessLevel.GameManagerEvent += Start_LevelEndless;
     }
     private void OnDisable()
     {
@@ -59,6 +63,8 @@ public class GameManager : MonoBehaviour
         _LoadLevel1.GameManagerEvent -= Start_Level1;
         _LoadLevel2.GameManagerEvent -= Start_Level2;
         _LoadLevel3.GameManagerEvent -= Start_Level3;
+        _LoadLevel4.GameManagerEvent -= Start_Level4;
+        _EndlessLevel.GameManagerEvent += Start_LevelEndless;
     }
     private void Start()
     {
@@ -154,6 +160,16 @@ public class GameManager : MonoBehaviour
     {
         UnloadPrevious(_currentScene);
         StartCoroutine(LevelCoroutine("Level 3"));
+    }
+    private void Start_Level4()
+    {
+        UnloadPrevious(_currentScene);
+        StartCoroutine(LevelCoroutine("Level 4"));
+    }
+    private void Start_LevelEndless()
+    {
+        UnloadPrevious(_currentScene);
+        StartCoroutine(LevelCoroutine("Endless"));
     }
 
     private void Start_LoadLevelNumber(string level)

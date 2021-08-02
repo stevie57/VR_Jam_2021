@@ -1098,7 +1098,7 @@ PrefabInstance:
       objectReference: {fileID: 846989350}
     - target: {fileID: 6956980180488401296, guid: 4f4b4757016a0894d960d8bfd04f55dd, type: 3}
       propertyPath: LevelDuration
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6956980180488401297, guid: 4f4b4757016a0894d960d8bfd04f55dd, type: 3}
       propertyPath: onTimerEnd.m_PersistentCalls.m_Calls.Array.size
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4c87da88720a2cb42b5bf16272b40d13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 506408e443405bd4581ccefba6689f71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1768,6 +1768,10 @@ PrefabInstance:
     - target: {fileID: 8822553534832717184, guid: 3084e8a457cf38340a50e4e03d1715fa, type: 3}
       propertyPath: m_Name
       value: Fire Element
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822553534832717184, guid: 3084e8a457cf38340a50e4e03d1715fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8822553534832717188, guid: 3084e8a457cf38340a50e4e03d1715fa, type: 3}
       propertyPath: m_RootOrder
