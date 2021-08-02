@@ -71,14 +71,14 @@ MonoBehaviour:
   CurrentDebugState: 6
   isWorldComplete: 0
   WorldValue: 1
-  Duration: 0
+  Duration: 10
   BlessingGO: {fileID: 157035699015511606}
   CompleteGO: {fileID: 157035698622625316}
   WateringGO: {fileID: 1248736429730078035}
   SowingGO: {fileID: 7892692006283425042}
   BurningGO: {fileID: 7232344880846441014}
   ClearingGO: {fileID: 8562005865403984798}
-  WorldStateRange: 0
+  WorldStateRange: 1
   _worldCollider: {fileID: 157035698262865377}
   WorldCompletePS: {fileID: 1315375444719082598}
   FireParticleSystem: {fileID: 157035698914914441}

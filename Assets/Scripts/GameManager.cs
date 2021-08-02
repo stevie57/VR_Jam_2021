@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameManagerEventChannelSO _mainMenu;
     [SerializeField] private GameManagerEventChannelSO _returnMainMenu;
     [SerializeField] private GameManagerEventChannelSO _quitButton;
+    [SerializeField] private GameManagerEventChannelSO _LoadLevel1;
+    [SerializeField] private GameManagerEventChannelSO _LoadLevel2;
+    [SerializeField] private GameManagerEventChannelSO _LoadLevel3;
 
     [Header("Debug Settings")]
     [SerializeField] private bool isDebug;
@@ -41,6 +44,10 @@ public class GameManager : MonoBehaviour
         _timedOut.GameManagerEvent += Start_EndLevel;
         _returnMainMenu.GameManagerEvent += Start_MainMenu;
         _quitButton.GameManagerEvent += QuitGame;
+
+        _LoadLevel1.GameManagerEvent += Start_Level1;
+        _LoadLevel2.GameManagerEvent += Start_Level2;
+        _LoadLevel3.GameManagerEvent += Start_Level3;
     }
     private void OnDisable()
     {
@@ -48,6 +55,10 @@ public class GameManager : MonoBehaviour
         _timedOut.GameManagerEvent -= Start_EndLevel;
         _returnMainMenu.GameManagerEvent -= Start_MainMenu;
         _quitButton.GameManagerEvent -= QuitGame;
+
+        _LoadLevel1.GameManagerEvent -= Start_Level1;
+        _LoadLevel2.GameManagerEvent -= Start_Level2;
+        _LoadLevel3.GameManagerEvent -= Start_Level3;
     }
     private void Start()
     {
@@ -106,7 +117,6 @@ public class GameManager : MonoBehaviour
         yield return screenFade.FadeIn();
         yield return new WaitForSeconds(1f);
 
-
         yield return SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
         _currentScene = SceneManager.GetSceneByName(level);
         SceneManager.SetActiveScene(_currentScene);
@@ -128,6 +138,22 @@ public class GameManager : MonoBehaviour
     {
         UnloadPrevious(_currentScene);
         StartCoroutine(LevelCoroutine());
+    }
+
+    private void Start_Level1()
+    {
+        UnloadPrevious(_currentScene);
+        StartCoroutine(LevelCoroutine("Level 1"));
+    }
+    private void Start_Level2()
+    {
+        UnloadPrevious(_currentScene);
+        StartCoroutine(LevelCoroutine("Level 2"));
+    }
+    private void Start_Level3()
+    {
+        UnloadPrevious(_currentScene);
+        StartCoroutine(LevelCoroutine("Level 3"));
     }
 
     private void Start_LoadLevelNumber(string level)

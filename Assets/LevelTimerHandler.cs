@@ -16,12 +16,9 @@ public class LevelTimerHandler : MonoBehaviour
         timer = GetComponent<Timer>();
         timer.StartTimer(LevelDuration);
     }
-
     public void TimedOut()
     {
         LevelUI.SetActive(true);
         GameUI.SetActive(false);
     }
-
-
 }
