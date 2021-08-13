@@ -982,6 +982,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 376409260121053261, guid: 839464816093d004aa29a138891a903a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 846989351}
+    - target: {fileID: 376409260121053261, guid: 839464816093d004aa29a138891a903a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 376409260121053261, guid: 839464816093d004aa29a138891a903a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_LevelMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 376409260166376987, guid: 839464816093d004aa29a138891a903a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1070,10 +1082,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level UI
       objectReference: {fileID: 0}
+    - target: {fileID: 376409260166376989, guid: 839464816093d004aa29a138891a903a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 376409260166376991, guid: 839464816093d004aa29a138891a903a, type: 3}
       propertyPath: StartButton
       value: 
       objectReference: {fileID: 11400000, guid: d4a9b4bf8cb376141892b0eb4721313b, type: 2}
+    - target: {fileID: 376409260349566843, guid: 839464816093d004aa29a138891a903a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376409260792898810, guid: 839464816093d004aa29a138891a903a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 846989351}
+    - target: {fileID: 376409260792898810, guid: 839464816093d004aa29a138891a903a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnQuitButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839464816093d004aa29a138891a903a, type: 3}
 --- !u!1 &846989350 stripped
@@ -1081,6 +1109,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 376409260166376989, guid: 839464816093d004aa29a138891a903a, type: 3}
   m_PrefabInstance: {fileID: 846989349}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &846989351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 376409260166376991, guid: 839464816093d004aa29a138891a903a, type: 3}
+  m_PrefabInstance: {fileID: 846989349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846989350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bfa5b24e9cbc6418dbf4553e9e254b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &850606018
 PrefabInstance:
   m_ObjectHideFlags: 0
